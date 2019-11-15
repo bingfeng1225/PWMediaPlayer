@@ -14,7 +14,7 @@ import java.lang.ref.WeakReference;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import cn.qd.peiwen.pwtools.logger.PWLogger;
+import cn.qd.peiwen.pwlogger.PWLogger;
 import cn.qd.peiwen.pwvideoplayer.enmudefine.ErrorType;
 import cn.qd.peiwen.pwvideoplayer.enmudefine.PlayerState;
 import cn.qd.peiwen.pwvideoplayer.listener.IPlayerListener;
