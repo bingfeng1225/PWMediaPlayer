@@ -260,7 +260,7 @@ public class VideoPlayer implements
     }
 
     public void resume() {
-        if (!this.parameters.pauseByUser) {
+        if (this.parameters.pauseByUser) {
             this.parameters.pauseByUser = false;
             this.parametersChanged();
         }
