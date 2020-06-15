@@ -14,7 +14,6 @@ import java.lang.ref.WeakReference;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import cn.qd.peiwen.pwlogger.PWLogger;
 import cn.qd.peiwen.pwvideoplayer.enmudefine.ErrorType;
 import cn.qd.peiwen.pwvideoplayer.enmudefine.PlayerState;
 import cn.qd.peiwen.pwvideoplayer.listener.IPlayerListener;
@@ -198,7 +197,7 @@ public class VideoPlayer implements
             }
             this.mediaPlayer.prepareAsync();
         } catch (Exception e) {
-            PWLogger.e(e);
+            e.printStackTrace();
             this.setErrorType(ErrorType.MEDIA_ERROR_INTERNAL_DEVICE_ERROR);
         }
     }
