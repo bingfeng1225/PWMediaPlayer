@@ -325,11 +325,11 @@ public class VideoPlayer implements
     /************************ 播放器状态监听接口 **********************************/
     @Override
     public void onPrepared(MediaPlayer mp) {
+        parameters.duration = mediaPlayer.getDuration();
         this.setPlayerState(PlayerState.PLAYER_PREPARED);
         if (this.seekTime > 0) {
             this.seekToTime(this.seekTime);
         }
-        parameters.duration = mediaPlayer.getDuration();
         parameters.position = this.seekTime;
         if (this.parameters.isConditionsMeetRequirements()) {
             startTimer();
