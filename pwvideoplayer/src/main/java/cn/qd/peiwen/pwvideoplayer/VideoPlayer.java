@@ -36,7 +36,9 @@ public class VideoPlayer implements
     private MediaPlayer mediaPlayer;
     private WeakReference<IPlayerListener> listener;
 
+    private int loop = 0;
     private int seekTime = 0;
+    private int currentloop = 0;
     private boolean ended = false;
     private boolean stoped = false;
     private boolean buffing = false;
@@ -87,6 +89,10 @@ public class VideoPlayer implements
 
     public PlayerState playerState() {
         return playerState;
+    }
+
+    public void setLoop(int loop) {
+        this.loop = loop;
     }
 
     public void setSeekTime(int seekTime) {
@@ -217,7 +223,9 @@ public class VideoPlayer implements
         this.ended = false;
         this.stoped = false;
         this.buffing = false;
+        this.loop = 0;
         this.seekTime = 0;
+        this.currentloop = 0;
         this.setErrorType(ErrorType.MEDIA_ERROR_NONE);
         this.setPlayerState(PlayerState.PLAYER_IDLE);
     }
@@ -342,10 +350,25 @@ public class VideoPlayer implements
 
     @Override
     public void onCompletion(MediaPlayer mp) {
-        this.stopTimer();
-        this.ended = true;
-        parameters.position = parameters.duration;
-        this.firePlayerCompleted();
+        if(this.loop < 0) {
+            this.seekToTime(0);
+            if (this.parameters.isConditionsMeetRequirements()) {
+                this.mediaPlayer.start();
+            }
+        } else {
+            if(this.currentloop != this.loop) {
+                this.currentloop++;
+                this.seekToTime(0);
+                if (this.parameters.isConditionsMeetRequirements()) {
+                    this.mediaPlayer.start();
+                }
+            } else {
+                this.stopTimer();
+                this.ended = true;
+                parameters.position = parameters.duration;
+                this.firePlayerCompleted();
+            }
+        }
     }
 
     @Override

@@ -1,0 +1,427 @@
+[
+  {
+    "timeZone": "Pacific/Midway",
+    "chinaName": "中途岛",
+    "englishName": "Midway"
+  },
+  {
+    "timeZone": "Pacific/Honolulu",
+    "chinaName": "檀香山",
+    "englishName": "Hawaii - Aleutian Standard Time"
+  },
+  {
+    "timeZone": "America/Anchorage",
+    "chinaName": "安克雷奇",
+    "englishName": "Alask Standard Time"
+  },
+  {
+    "timeZone": "America/Los_Angeles",
+    "chinaName": "洛杉矶",
+    "englishName": "Pacific Standard Time"
+  },
+  {
+    "timeZone": "America/Tijuana",
+    "chinaName": "提华纳",
+    "englishName": "Tijuana"
+  },
+  {
+    "timeZone": "America/Phoenix",
+    "chinaName": "凤凰城",
+    "englishName": "Mountain Standard Time"
+  },
+  {
+    "timeZone": "America/Chihuahua",
+    "chinaName": "奇瓦瓦",
+    "englishName": "Chihuahua"
+  },
+  {
+    "timeZone": "America/Denver",
+    "chinaName": "丹佛",
+    "englishName": "Denver"
+  },
+  {
+    "timeZone": "America/Costa_Rica",
+    "chinaName": "哥斯达黎加",
+    "englishName": "Costa Rica"
+  },
+  {
+    "timeZone": "America/Chicago",
+    "chinaName": "芝加哥",
+    "englishName": "Chicago"
+  },
+  {
+    "timeZone": "America/Mexico_City",
+    "chinaName": "墨西哥城",
+    "englishName": "Mexico City"
+  },
+  {
+    "timeZone": "America/Regina",
+    "chinaName": "里贾纳",
+    "englishName": "Regina"
+  },
+  {
+    "timeZone": "America/Bogota",
+    "chinaName": "波哥大",
+    "englishName": "Bogota"
+  },
+  {
+    "timeZone": "America/New_York",
+    "chinaName": "纽约",
+    "englishName": "New York"
+  },
+  {
+    "timeZone": "America/Caracas",
+    "chinaName": "加拉加斯",
+    "englishName": "Caracas"
+  },
+  {
+    "timeZone": "America/Barbados",
+    "chinaName": "巴巴多斯",
+    "englishName": "Barbados"
+  },
+  {
+    "timeZone": "America/Halifax",
+    "chinaName": "哈利法克斯",
+    "englishName": "Halifax"
+  },
+  {
+    "timeZone": "America/Manaus",
+    "chinaName": "马瑙斯",
+    "englishName": "Manaus"
+  },
+  {
+    "timeZone": "America/St_Johns",
+    "chinaName": "圣约翰斯",
+    "englishName": "St.John 's"
+  },
+  {
+    "timeZone": "America/Santiago",
+    "chinaName": "圣地亚哥",
+    "englishName": "Santiago"
+  },
+  {
+    "timeZone": "America/Buenos_Aires",
+    "chinaName": "布宜诺斯艾利斯",
+    "englishName": "Buenos Aires"
+  },
+  {
+    "timeZone": "America/Godthab",
+    "chinaName": "戈特霍布",
+    "englishName": "Nuuk"
+  },
+  {
+    "timeZone": "America/Sao_Paulo",
+    "chinaName": "圣保罗",
+    "englishName": "Sao Paulo"
+  },
+  {
+    "timeZone": "America/Montevideo",
+    "chinaName": "蒙得维的亚",
+    "englishName": "Montevideo"
+  },
+  {
+    "timeZone": "Atlantic/South_Georgia",
+    "chinaName": "南乔治亚",
+    "englishName": "South Georgia"
+  },
+  {
+    "timeZone": "Atlantic/Azores",
+    "chinaName": "亚述尔群岛",
+    "englishName": "Azores"
+  },
+  {
+    "timeZone": "Atlantic/Cape_Verde",
+    "chinaName": "佛得角",
+    "englishName": "Cape Verde"
+  },
+  {
+    "timeZone": "Africa/Casablanca",
+    "chinaName": "卡萨布兰卡",
+    "englishName": "Casablanca"
+  },
+  {
+    "timeZone": "Europe/London",
+    "chinaName": "伦敦",
+    "englishName": "London"
+  },
+  {
+    "timeZone": "Europe/Amsterdam",
+    "chinaName": "阿姆斯特丹",
+    "englishName": "Amsterdam"
+  },
+  {
+    "timeZone": "Europe/Belgrade",
+    "chinaName": "贝尔格莱德",
+    "englishName": "Belgrade"
+  },
+  {
+    "timeZone": "Europe/Brussels",
+    "chinaName": "布鲁塞尔",
+    "englishName": "Brussels"
+  },
+  {
+    "timeZone": "Europe/Sarajevo",
+    "chinaName": "萨拉热窝",
+    "englishName": "Sarajevo"
+  },
+  {
+    "timeZone": "Africa/Brazzaville",
+    "chinaName": "布拉柴维尔",
+    "englishName": "Brazzaville"
+  },
+  {
+    "timeZone": "Africa/Windhoek",
+    "chinaName": "温得和克",
+    "englishName": "Windhoek"
+  },
+  {
+    "timeZone": "Asia/Amman",
+    "chinaName": "安曼",
+    "englishName": "Amman"
+  },
+  {
+    "timeZone": "Europe/Athens",
+    "chinaName": "雅典",
+    "englishName": "Athens"
+  },
+  {
+    "timeZone": "Asia/Beirut",
+    "chinaName": "贝鲁特",
+    "englishName": "Beirut"
+  },
+  {
+    "timeZone": "Africa/Cairo",
+    "chinaName": "开罗",
+    "englishName": "Cairo"
+  },
+  {
+    "timeZone": "Europe/Helsinki",
+    "chinaName": "赫尔辛基",
+    "englishName": "Helsinki"
+  },
+  {
+    "timeZone": "Asia/Jerusalem",
+    "chinaName": "耶路撒冷",
+    "englishName": "Jerusalem"
+  },
+  {
+    "timeZone": "Europe/Minsk",
+    "chinaName": "明斯克",
+    "englishName": "Minsk"
+  },
+  {
+    "timeZone": "Africa/Harare",
+    "chinaName": "哈拉雷",
+    "englishName": "Harare"
+  },
+  {
+    "timeZone": "Asia/Baghdad",
+    "chinaName": "巴格达",
+    "englishName": "Baghdad"
+  },
+  {
+    "timeZone": "Europe/Moscow",
+    "chinaName": "莫斯科",
+    "englishName": "Moscow"
+  },
+  {
+    "timeZone": "Asia/Kuwait",
+    "chinaName": "科威特",
+    "englishName": "Kuwait"
+  },
+  {
+    "timeZone": "Africa/Nairobi",
+    "chinaName": "内罗毕",
+    "englishName": "Nairobi"
+  },
+  {
+    "timeZone": "Asia/Tehran",
+    "chinaName": "德黑兰",
+    "englishName": "Tehran"
+  },
+  {
+    "timeZone": "Asia/Baku",
+    "chinaName": "巴库",
+    "englishName": "Baku"
+  },
+  {
+    "timeZone": "Asia/Tbilisi",
+    "chinaName": "第比利斯",
+    "englishName": "Tbilisi"
+  },
+  {
+    "timeZone": "Asia/Yerevan",
+    "chinaName": "埃里温",
+    "englishName": "Yerevan"
+  },
+  {
+    "timeZone": "Asia/Dubai",
+    "chinaName": "迪拜",
+    "englishName": "Dubai"
+  },
+  {
+    "timeZone": "Asia/Kabul",
+    "chinaName": "喀布尔",
+    "englishName": "Kabul"
+  },
+  {
+    "timeZone": "Asia/Karachi",
+    "chinaName": "卡拉奇",
+    "englishName": "Karachi"
+  },
+  {
+    "timeZone": "Asia/Oral",
+    "chinaName": "乌拉尔",
+    "englishName": "Oral"
+  },
+  {
+    "timeZone": "Asia/Yekaterinburg",
+    "chinaName": "叶卡捷林堡",
+    "englishName": "Yekaterinburg"
+  },
+  {
+    "timeZone": "Asia/Calcutta",
+    "chinaName": "加尔各答",
+    "englishName": "Calcutta"
+  },
+  {
+    "timeZone": "Asia/Colombo",
+    "chinaName": "科伦坡",
+    "englishName": "Colombo"
+  },
+  {
+    "timeZone": "Asia/Katmandu",
+    "chinaName": "加德满都",
+    "englishName": "Katmandu"
+  },
+  {
+    "timeZone": "Asia/Almaty",
+    "chinaName": "阿拉木图",
+    "englishName": "Almaty"
+  },
+  {
+    "timeZone": "Asia/Rangoon",
+    "chinaName": "仰光",
+    "englishName": "Rangoon"
+  },
+  {
+    "timeZone": "Asia/Krasnoyarsk",
+    "chinaName": "克拉斯诺亚尔斯克",
+    "englishName": "Krasnoyarsk"
+  },
+  {
+    "timeZone": "Asia/Bangkok",
+    "chinaName": "曼谷",
+    "englishName": "Bangkok"
+  },
+  {
+    "timeZone": "Asia/Jakarta",
+    "chinaName": "雅加达",
+    "englishName": "Jakarta"
+  },
+  {
+    "timeZone": "Asia/Shanghai",
+    "chinaName": "中国标准时间",
+    "englishName": "Shanghai"
+  },
+  {
+    "timeZone": "Asia/Hong_Kong",
+    "chinaName": "香港",
+    "englishName": "Hong Kong"
+  },
+  {
+    "timeZone": "Asia/Irkutsk",
+    "chinaName": "伊尔库茨克",
+    "englishName": "Irkutsk"
+  },
+  {
+    "timeZone": "Asia/Kuala_Lumpur",
+    "chinaName": "吉隆坡",
+    "englishName": "Kuala Lumpur"
+  },
+  {
+    "timeZone": "Australia/Perth",
+    "chinaName": "珀斯",
+    "englishName": "Perth"
+  },
+  {
+    "timeZone": "Asia/Taipei",
+    "chinaName": "台北",
+    "englishName": "Taipei"
+  },
+  {
+    "timeZone": "Asia/Seoul",
+    "chinaName": "首尔",
+    "englishName": "Seoul"
+  },
+  {
+    "timeZone": "Asia/Tokyo",
+    "chinaName": "东京",
+    "englishName": "Tokyo"
+  },
+  {
+    "timeZone": "Asia/Yakutsk",
+    "chinaName": "雅库茨克",
+    "englishName": "Yakutsk"
+  },
+  {
+    "timeZone": "Australia/Darwin",
+    "chinaName": "达尔文",
+    "englishName": "Darwin"
+  },
+  {
+    "timeZone": "Australia/Brisbane",
+    "chinaName": "布里斯班",
+    "englishName": "Brisbane"
+  },
+  {
+    "timeZone": "Asia/Vladivostok",
+    "chinaName": "符拉迪沃斯托克",
+    "englishName": "Vladivostok"
+  },
+  {
+    "timeZone": "Pacific/Guam",
+    "chinaName": "关岛",
+    "englishName": "Guam"
+  },
+  {
+    "timeZone": "Australia/Adelaide",
+    "chinaName": "阿德莱德",
+    "englishName": "Adelaide"
+  },
+  {
+    "timeZone": "Australia/Hobart",
+    "chinaName": "霍巴特",
+    "englishName": "Hobart"
+  },
+  {
+    "timeZone": "Australia/Sydney",
+    "chinaName": "悉尼",
+    "englishName": "Sydney"
+  },
+  {
+    "timeZone": "Asia/Magadan",
+    "chinaName": "马加丹",
+    "englishName": "Magadan"
+  },
+  {
+    "timeZone": "Pacific/Majuro",
+    "chinaName": "马朱罗",
+    "englishName": "Majuro"
+  },
+  {
+    "timeZone": "Pacific/Auckland",
+    "chinaName": "奥克兰",
+    "englishName": "Auckland"
+  },
+  {
+    "timeZone": "Pacific/Fiji",
+    "chinaName": "斐济",
+    "englishName": "Fiji"
+  },
+  {
+    "timeZone": "Pacific/Tongatapu",
+    "chinaName": "东加塔布",
+    "englishName": "Tongatapu"
+  }
+]

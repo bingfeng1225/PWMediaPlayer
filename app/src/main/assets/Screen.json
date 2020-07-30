@@ -1,0 +1,51 @@
+{
+  "components": [
+    {"plugin": "RootView"},
+    {"plugin": "HomePage"},
+
+    {"plugin": "LTBPlugin"},
+    {"plugin": "UHUBPlugin"},
+    {"plugin": "SHTZPlugin"},
+    {"plugin": "RSMSPlugin"},
+    {"plugin": "ZLG600APlugin"},
+
+    {"plugin": "WarningMusic"},
+
+    {"plugin": "UserEditPage"},
+    {"plugin": "UserLoginPage"},
+
+    {"plugin": "NotePage"},
+    {"plugin": "NoteEditPage"},
+    {"plugin": "NoteListPage"},
+    {"plugin": "NoteDetailPage"},
+
+    {"plugin": "MessagePage"},
+    {"plugin": "MessageEditPage"},
+    {"plugin": "MessageListPage"},
+    {"plugin": "MessageDetailPage"},
+
+    {"plugin": "SampleSettingPage"},
+
+    {"plugin": "QueryPage"},
+    {"plugin": "EventPage"},
+    {"plugin": "BatteryPage"},
+    {"plugin": "WarningPage"},
+    {"plugin": "DeviceInfoPage"},
+    {"plugin": "BackupSystemPage"},
+    {"plugin": "RunningStatusPage"},
+
+    {"plugin": "SettingPage"},
+    {"plugin": "UserSettingPage"},
+    {"plugin": "BackupSettingPage"},
+    {"plugin": "RuningSettingPage"},
+    {"plugin": "InitialSettingPage"},
+    {"plugin": "NetworkSettingPage"},
+    {"plugin": "TemperatureSettingPage"},
+
+    {"plugin": "TimeSettingPage"},
+    {"plugin": "PasswordSettingPage"},
+    {"plugin": "LanguageSettingPage"},
+    {"plugin": "UserModelSettingPage"},
+    {"plugin": "RunningModelSettingPage"}
+  ]
+}
