@@ -1,7 +1,7 @@
 package cn.qd.peiwen.demo;
 
 import androidx.appcompat.app.AppCompatActivity;
-import cn.qd.peiwen.pwvideoplayer.VideoPlayer;
+import cn.qd.peiwen.player.VideoPlayer;
 
 import android.os.Bundle;
 import android.view.View;

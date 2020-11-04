@@ -1,4 +1,4 @@
-package cn.qd.peiwen.pwvideoplayer.parsmeter;
+package cn.qd.peiwen.player.parsmeter;
 
 public class Parameters {
     private boolean pauseByUser = false;

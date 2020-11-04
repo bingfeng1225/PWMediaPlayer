@@ -1,9 +1,9 @@
-package cn.qd.peiwen.pwvideoplayer.listener;
+package cn.qd.peiwen.player.listener;
 
 
-import cn.qd.peiwen.pwvideoplayer.VideoPlayer;
-import cn.qd.peiwen.pwvideoplayer.enmudefine.ErrorType;
-import cn.qd.peiwen.pwvideoplayer.enmudefine.PlayerState;
+import cn.qd.peiwen.player.VideoPlayer;
+import cn.qd.peiwen.player.enmudefine.ErrorType;
+import cn.qd.peiwen.player.enmudefine.PlayerState;
 
 /**
  * Created by nick on 2017/3/29.

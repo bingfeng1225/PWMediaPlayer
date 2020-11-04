@@ -1,4 +1,4 @@
-package cn.qd.peiwen.pwvideoplayer;
+package cn.qd.peiwen.player;
 
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
@@ -13,10 +13,10 @@ import java.lang.ref.WeakReference;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import cn.qd.peiwen.pwvideoplayer.enmudefine.ErrorType;
-import cn.qd.peiwen.pwvideoplayer.enmudefine.PlayerState;
-import cn.qd.peiwen.pwvideoplayer.listener.IPlayerListener;
-import cn.qd.peiwen.pwvideoplayer.parsmeter.Parameters;
+import cn.qd.peiwen.player.enmudefine.ErrorType;
+import cn.qd.peiwen.player.enmudefine.PlayerState;
+import cn.qd.peiwen.player.listener.IPlayerListener;
+import cn.qd.peiwen.player.parsmeter.Parameters;
 
 
 /**

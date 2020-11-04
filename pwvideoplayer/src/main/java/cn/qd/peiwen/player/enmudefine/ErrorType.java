@@ -1,4 +1,4 @@
-package cn.qd.peiwen.pwvideoplayer.enmudefine;
+package cn.qd.peiwen.player.enmudefine;
 
 /**
  * Created by nick on 2017/12/13.
