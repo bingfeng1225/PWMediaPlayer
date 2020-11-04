@@ -14,8 +14,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         this.player = new VideoPlayer(this);
         this.player.init();
-        this.player.becomeForeground();
+        this.player.pause();
         this.player.setLoop(-1);
+        this.player.becomeForeground();
+        this.player.setPlayObject("assets://dangdang.wav");
         this.player.load("assets://dangdang.wav");
     }
 

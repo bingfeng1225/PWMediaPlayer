@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.view.SurfaceHolder;
 
-
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.util.Timer;
@@ -17,6 +16,7 @@ import java.util.TimerTask;
 import cn.qd.peiwen.pwvideoplayer.enmudefine.ErrorType;
 import cn.qd.peiwen.pwvideoplayer.enmudefine.PlayerState;
 import cn.qd.peiwen.pwvideoplayer.listener.IPlayerListener;
+import cn.qd.peiwen.pwvideoplayer.parsmeter.Parameters;
 
 
 /**
@@ -28,7 +28,8 @@ public class VideoPlayer implements
         MediaPlayer.OnErrorListener,
         MediaPlayer.OnPreparedListener,
         MediaPlayer.OnCompletionListener,
-        MediaPlayer.OnBufferingUpdateListener, MediaPlayer.OnVideoSizeChangedListener {
+        MediaPlayer.OnBufferingUpdateListener,
+        MediaPlayer.OnVideoSizeChangedListener {
 
     private Timer timer;
     private Context context;
@@ -38,16 +39,24 @@ public class VideoPlayer implements
 
     private int loop = 0;
     private int seekTime = 0;
+    private int duration = 0;
+    private int position = 0;
     private int currentloop = 0;
     private boolean ended = false;
     private boolean stoped = false;
     private boolean buffing = false;
+    public Object playObject = null;
     private ErrorType errorType = ErrorType.MEDIA_ERROR_NONE;
     private PlayerState playerState = PlayerState.PLAYER_UNKNOWN;
 
     public VideoPlayer(Context context) {
         this.context = context;
         this.parameters = new Parameters();
+    }
+
+    public VideoPlayer(Context context, Parameters parameters) {
+        this.context = context;
+        this.parameters = parameters;
     }
 
     public void init() {
@@ -75,16 +84,16 @@ public class VideoPlayer implements
     }
 
     /************************ 属性接口 **********************************/
-    public Object lastObject() {
-        return this.parameters.playObject;
+    public int duration() {
+        return this.duration;
     }
 
-    public int lastDuration() {
-        return this.parameters.duration;
+    public int position() {
+        return this.position;
     }
 
-    public int lastPosition() {
-        return this.parameters.position;
+    public Object object() {
+        return this.playObject;
     }
 
     public PlayerState playerState() {
@@ -100,9 +109,9 @@ public class VideoPlayer implements
     }
 
     public void setPlayObject(Object playObject) {
-        this.parameters.position = 0;
-        this.parameters.duration = 0;
-        this.parameters.playObject = playObject;
+        this.position = 0;
+        this.duration = 0;
+        this.playObject = playObject;
     }
 
     public void setErrorType(ErrorType errorType) {
@@ -193,8 +202,7 @@ public class VideoPlayer implements
             this.setPlayerState(PlayerState.PLAYER_PREPAREING);
             if (url.startsWith("/")) {
                 this.mediaPlayer.setDataSource(context, Uri.fromFile(new File(url)));
-            } else
-                if (url.startsWith("assets://")) {
+            } else if (url.startsWith("assets://")) {
                 String assets = url.substring("assets://".length());
                 AssetFileDescriptor descriptor = context.getAssets().openFd(assets);
                 this.mediaPlayer.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
@@ -259,41 +267,43 @@ public class VideoPlayer implements
         }
     }
 
+
+    public void changedVolume(float volume) {
+        if (null != this.mediaPlayer) {
+            this.mediaPlayer.setVolume(volume, volume);
+        }
+    }
+
     public void pause() {
-        if (!this.parameters.pauseByUser) {
-            this.parameters.pauseByUser = true;
+        if (!this.parameters.isPauseByUser()) {
+            this.parameters.setPauseByUser(true);
             this.parametersChanged();
         }
     }
 
     public void resume() {
-        if (this.parameters.pauseByUser) {
-            this.parameters.pauseByUser = false;
+        if (this.parameters.isPauseByUser()) {
+            this.parameters.setPauseByUser(false);
             this.parametersChanged();
         }
     }
 
     public void enterBackground() {
-        if (!this.parameters.enterBackground) {
-            this.parameters.enterBackground = true;
+        if (!this.parameters.isEnterBackground()) {
+            this.parameters.setEnterBackground(true);
             this.parametersChanged();
         }
     }
 
     public void becomeForeground() {
-        if (this.parameters.enterBackground) {
-            this.parameters.enterBackground = false;
+        if (this.parameters.isEnterBackground()) {
+            this.parameters.setEnterBackground(false);
             this.parametersChanged();
         }
     }
 
-    public void changedVolume(float volume){
-        if(null != this.mediaPlayer){
-            this.mediaPlayer.setVolume(volume,volume);;
-        }
-    }
 
-    private void parametersChanged() {
+    public void parametersChanged() {
         if (this.parameters.isConditionsMeetRequirements()) {
             if (this.canResume()) {
                 this.startTimer();
@@ -316,8 +326,8 @@ public class VideoPlayer implements
             timer.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    parameters.position = mediaPlayer.getCurrentPosition();
-                    firePlayerProgressChanged(parameters.position, parameters.duration);
+                    position = mediaPlayer.getCurrentPosition();
+                    firePlayerProgressChanged(position, duration);
                 }
             }, 100, 1000);
         }
@@ -333,12 +343,12 @@ public class VideoPlayer implements
     /************************ 播放器状态监听接口 **********************************/
     @Override
     public void onPrepared(MediaPlayer mp) {
-        parameters.duration = mediaPlayer.getDuration();
+        this.duration = mediaPlayer.getDuration();
         this.setPlayerState(PlayerState.PLAYER_PREPARED);
         if (this.seekTime > 0) {
             this.seekToTime(this.seekTime);
         }
-        parameters.position = this.seekTime;
+        this.position = this.seekTime;
         if (this.parameters.isConditionsMeetRequirements()) {
             startTimer();
             this.mediaPlayer.start();
@@ -350,13 +360,13 @@ public class VideoPlayer implements
 
     @Override
     public void onCompletion(MediaPlayer mp) {
-        if(this.loop < 0) {
+        if (this.loop < 0) {
             this.seekToTime(0);
             if (this.parameters.isConditionsMeetRequirements()) {
                 this.mediaPlayer.start();
             }
         } else {
-            if(this.currentloop != this.loop) {
+            if (this.currentloop != this.loop) {
                 this.currentloop++;
                 this.seekToTime(0);
                 if (this.parameters.isConditionsMeetRequirements()) {
@@ -365,7 +375,7 @@ public class VideoPlayer implements
             } else {
                 this.stopTimer();
                 this.ended = true;
-                parameters.position = parameters.duration;
+                this.position = this.duration;
                 this.firePlayerCompleted();
             }
         }
@@ -397,7 +407,7 @@ public class VideoPlayer implements
 
     @Override
     public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
-        this.fireVideoSizeChanged(width,height);
+        this.fireVideoSizeChanged(width, height);
     }
 
     @Override
@@ -436,55 +446,55 @@ public class VideoPlayer implements
     /************************ 分发事件的接口 **********************************/
     private void firePlayerStoped() {
         if (null != this.listener && null != this.listener.get()) {
-            listener.get().onPlayerStoped(this, lastObject());
+            listener.get().onPlayerStoped(this, this.playObject);
         }
     }
 
     private void firePlayerCompleted() {
         if (null != this.listener && null != this.listener.get()) {
-            listener.get().onPlayerCompleted(this, lastObject());
+            listener.get().onPlayerCompleted(this, this.playObject);
         }
     }
 
     private void firePlayerStateChanged() {
         if (null != this.listener && null != this.listener.get()) {
-            listener.get().onPlayerStateChanged(this, lastObject(), this.playerState);
+            listener.get().onPlayerStateChanged(this, this.playObject, this.playerState);
         }
     }
 
     private void firePlayerErrorOccurred() {
         if (null != this.listener && null != this.listener.get()) {
-            listener.get().onPlayerErrorOccurred(this, lastObject(), this.errorType);
+            listener.get().onPlayerErrorOccurred(this, this.playObject, this.errorType);
         }
     }
 
     private void firePlayerBufferingEnded() {
         if (null != this.listener && null != this.listener.get()) {
-            listener.get().onPlayerBufferingEnded(this, lastObject());
+            listener.get().onPlayerBufferingEnded(this, this.playObject);
         }
     }
 
     private void firePlayerBufferingStart() {
         if (null != this.listener && null != this.listener.get()) {
-            listener.get().onPlayerBufferingStart(this, lastObject());
+            listener.get().onPlayerBufferingStart(this, this.playObject);
         }
     }
 
     private void fireBufferingUpdated(int bufferPercentage) {
         if (null != this.listener && null != this.listener.get()) {
-            listener.get().onBufferingUpdated(this, lastObject(), bufferPercentage);
+            listener.get().onBufferingUpdated(this, this.playObject, bufferPercentage);
         }
     }
 
     private void fireVideoSizeChanged(int width, int height) {
         if (null != this.listener && null != this.listener.get()) {
-            listener.get().onVideoSizeChanged(this, lastObject(), width, height);
+            listener.get().onVideoSizeChanged(this, this.playObject, width, height);
         }
     }
 
     private void firePlayerProgressChanged(int position, int duration) {
         if (null != this.listener && null != this.listener.get()) {
-            listener.get().onPlayerProgressChanged(this, lastObject(), position, duration);
+            listener.get().onPlayerProgressChanged(this, this.playObject, position, duration);
         }
     }
 }
